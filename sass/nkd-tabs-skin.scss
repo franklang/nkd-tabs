@@ -1,20 +1,25 @@
+$nkd-grey: #ededed;
+$nkd-border-width: 1px;
+
 //
 // skin
 .nkd-tabs{
   [data-level="0"]{
-    .nkd{
-      &-link{
+    > .nkd-item{
+      > .nkd-link{
         padding: 10px;
-        border: 1px solid #ededed;
+        border: $nkd-border-width solid $nkd-grey;
       }
     }
   }
   [data-level="0"] [data-level]{
-    border: 1px solid #ededed;
+    padding: 10px;
+    border: $nkd-border-width solid $nkd-grey;
+    margin-top: -$nkd-border-width;
   }
   [data-state="open"]{
     > .nkd-link{
-      background: #ededed;
+      background: $nkd-grey;
     }
   }
-}
+} 

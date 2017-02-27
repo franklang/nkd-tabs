@@ -3,11 +3,9 @@
     width: 100%;
     float: left;
     position: relative;
-    .nkd{
-      &-item{
+    > .nkd-item{
         float: left;
-      }
-      &-link{
+      > .nkd-link{
         display: block;
       }
     }
@@ -18,11 +16,6 @@
     position: absolute;
     top: 100%;
     left: 0;
-    .nkd{
-      &-item{
-
-      }
-    }
   }
   [data-state="closed"]{
     [data-level]{
