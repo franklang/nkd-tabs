@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>[The Naked series] Minimalist SASS/jQuery tabs navigation widget.</title>
+    <link rel="stylesheet" href="css/nkd-reset.css">
+    <link rel="stylesheet" href="css/nkd-common.css">
+    <link rel="stylesheet" href="css/nkd-tabs-core.css">
+    <link rel="stylesheet" href="css/nkd-tabs-skin.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="js/nkd-common.js"></script>
+    <script src="js/nkd-tabs.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#demoNakedTabs').nkdTabs();
+        $('#js-nkd-reset').on('click', function(){
+          $('#demoNakedTabs').nkdReset();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- <h1>[The Naked series] Minimalist SASS/jQuery tabs navigation widget.</h1> -->
+    <p><button id="js-nkd-reset" role="button">Reset DOM</button></p>
+    <nav id="demoNakedTabs" class="nkd nkd-tabs js-nkd-tabs">
+      <ul class="nkd-level js-nkd-level" data-level="0">
+        <li class="nkd-item js-nkd-item" data-state="closed">
+          <a class="nkd-link js-nkd-link" href="#">Europe</a>
+          <ul class="nkd-level js-nkd-level" data-level="1">
+            <li class="nkd-item js-nkd-item">
+              <a class="nkd-link js-nkd-link" href="#">Angleterre</a>
+            </li>
+            <li class="nkd-item js-nkd-item">
+              <a class="nkd-link js-nkd-link" href="#">Allemagne</a>
+            </li>
+            <li class="nkd-item js-nkd-item" data-state="closed">
+              <a class="nkd-link js-nkd-link" href="#">France</a>
+              <ul class="nkd-level js-nkd-level" data-level="2">
+                <li class="nkd-item js-nkd-item">
+                  <a class="nkd-link js-nkd-link" href="#">Ain</a>
+                </li>
+                <li class="nkd-item js-nkd-item" data-state="closed">
+                  <a class="nkd-link js-nkd-link" href="#">Alsace</a>
+                  <ul class="nkd-level js-nkd-level" data-level="3">
+                    <li class="nkd-item js-nkd-item">
+                      <a class="nkd-link js-nkd-link" href="#">Strasbourg</a>
+                    </li>
+                    <li class="nkd-item js-nkd-item">
+                      <a class="nkd-link js-nkd-link" href="#">Colmar</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nkd-item js-nkd-item">
+                  <a class="nkd-link js-nkd-link" href="#">Normandie</a>
+                </li>
+                <li class="nkd-item js-nkd-item">
+                  <a class="nkd-link js-nkd-link" href="#">Bretagne</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nkd-item js-nkd-item">
+              <a class="nkd-link js-nkd-link" href="#">Espagne</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nkd-item js-nkd-item" data-state="closed">
+          <a class="nkd-link js-nkd-link" href="#">Australie</a>
+          <ul class="nkd-level js-nkd-level" data-level="1">
+            <li class="nkd-item js-nkd-item">
+              <a class="nkd-link js-nkd-link" href="#">Tasmanie</a>
+            </li>
+            <li class="nkd-item js-nkd-item">
+              <a class="nkd-link js-nkd-link" href="#">Victoria</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nkd-item js-nkd-item">
+          <a class="nkd-link js-nkd-link" href="#">Etats-Unis</a>
+        </li>
+        <li class="nkd-item js-nkd-item">
+          <a class="nkd-link js-nkd-link" href="#">Afrique</a>
+        </li>
+        <li class="nkd-item js-nkd-item">
+          <a class="nkd-link js-nkd-link" href="#">Océanie</a>
+        </li>
+      </ul>
+    </nav>
+  </body>
+</html>

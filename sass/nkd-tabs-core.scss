@@ -1,0 +1,32 @@
+.nkd-tabs{
+  [data-level="0"]{
+    width: 100%;
+    float: left;
+    position: relative;
+    .nkd{
+      &-item{
+        float: left;
+      }
+      &-link{
+        display: block;
+      }
+    }
+  }
+  [data-level="0"] [data-level]{
+    width: 100%;
+    float: left;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    .nkd{
+      &-item{
+
+      }
+    }
+  }
+  [data-state="closed"]{
+    [data-level]{
+      display: none;
+    }
+  }
+}

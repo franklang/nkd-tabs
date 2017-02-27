@@ -1,0 +1,20 @@
+//
+// skin
+.nkd-tabs{
+  [data-level="0"]{
+    .nkd{
+      &-link{
+        padding: 10px;
+        border: 1px solid #ededed;
+      }
+    }
+  }
+  [data-level="0"] [data-level]{
+    border: 1px solid #ededed;
+  }
+  [data-state="open"]{
+    > .nkd-link{
+      background: #ededed;
+    }
+  }
+}
