@@ -22,4 +22,15 @@
       display: none;
     }
   }
+  &.nkd-hover{
+    [data-level="0"]{
+      > .nkd-item{
+        &:hover{
+          [data-level]{
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }

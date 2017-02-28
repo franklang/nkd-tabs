@@ -2,6 +2,12 @@
 
   $.fn.nkdTabs = function(options){
 
+    var defaults = {
+      onHover: false
+    }
+
+    var settings = $.extend({}, defaults, options);
+
     function closeNavByClickingAnywhere(){
       $('.js-nkd-tabs').find('[data-state="open"]').each(function(){
         $(this).attr('data-state','closed');
@@ -9,30 +15,10 @@
     }
 
     function onLinkClick(){
-      // Get current nav level of clicked link
-      var getLinkNavLevel = $(this)
-        .closest('.js-nkd-level')
-        .attr('data-level');
-
       // Get clicked link sublevel state (open/closed)
       var getSubLevelState = $(this)
         .parent('.js-nkd-item')
         .attr('data-state');
-
-      // Close children sublevels
-      var closeChildren = $(this)
-        .parent('.js-nkd-item')
-        .find('[data-state="open"]')
-        .each(function(){
-          $(this)
-            .attr('data-state', 'closed');
-        });
-
-      // Get current level
-      var getCurrentLevelValue = $(this)
-        .parent('.js-nkd-item')
-        .children('.js-nkd-level')
-        .attr('data-level');
 
       if (getSubLevelState == 'closed'){
         nkd.setSubLevelState($(this),'open');
@@ -48,13 +34,17 @@
       }
     }
 
-    $('.js-nkd-link').on('click', onLinkClick);
+    if (settings.onHover == true){
+      $('.js-nkd-tabs').addClass('nkd-hover');
+    }
 
-    $(document).on('click', closeNavByClickingAnywhere);
-    $('.js-nkd-tabs').on('click', function(e){
-      e.stopPropagation();
-      return false;
-    });
-
+    else if (settings.onHover == false){
+      $('.js-nkd-link').on('click', onLinkClick);
+      $(document).on('click', closeNavByClickingAnywhere);
+      $('.js-nkd-tabs').on('click', function(e){
+        e.stopPropagation();
+        return false;
+      });
+    }
   };
 }(jQuery, window));
